@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - IWB Hardware & Software Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            background-image: url('data1.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        /* Navigation */
+        .nav-bar {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-bar a {
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .nav-bar a.active {
+            background-color: #008f77;
+            color: white;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background-color: grey;
+            position: absolute;
+            top: 70px;
+            right: 20px;
+            width: 200px;
+            border-radius: 5px;
+        }
+
+        .mobile-menu a {
+            padding: 12px;
+            text-align: center;
+            display: block;
+            color: white;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 30px;
+            color: #0071bd;
+            cursor: pointer;
+        }
+
+        /* Banner */
+        .banner {
+            background-color: #008f77;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 100px 20px 20px 20px;
+            font-size: 18px;
+        }
+
+        /* Pricing Section */
+        .pricing-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .pricing-card {
+            background-color: white;
+            padding: 20px;
+            width: 90%;
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .pricing-card h3 {
+            margin-bottom: 10px;
+            color: black;
+        }
+
+        .pricing-card p {
+            font-size: 16px;
+            margin: 10px 0;
+            color: black;
+        }
+
+        .pricing-card button {
+            background-color: #008f77;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .pricing-card button:hover {
+            background-color: #006a5b;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #008f77;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .footer-section {
+            max-width: 300px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .social-icons img {
+            width: 40px;
+            border-radius: 20px;
+            margin: 5px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-bar {
+                display: none;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .mobile-menu.show {
+                display: flex;
+            }
+
+            .banner {
+                font-size: 16px;
+            }
+
+            .pricing-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <img src="logo.jpg" alt="Company Logo" class="logo">
+        <div class="nav-bar">
+            <a href="index.html">Home</a>
+            
+            <a href="pricing.html" class="active">Pricing</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="faq.html">FAQ</a>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.htm">Home</a>
+        
+        <a href="pricing.html" class="active">Pricing</a>
+        <a href="about.htm">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="faq.html">FAQ</a>
+    </div>
+
+    <!-- Pricing Banner -->
+    <div class="banner">
+        <h1>Our Pricing Plans</h1>
+        <p>Choose a subscription plan that best suits your needs.</p>
+    </div>
+
+    <!-- Pricing Section -->
+    <div class="pricing-container">
+        <div class="pricing-card">
+            <h3>Disk Drill</h3>
+            <p><strong>Monthly:</strong> M100 | <strong>Annual:</strong> M1000</p>
+            <button>Subscribe</button>
+        </div>
+
+        <div class="pricing-card">
+            <h3>Recuva</h3>
+            <p><strong>Monthly:</strong> M80 | <strong>Annual:</strong> M800</p>
+            <button>Subscribe</button>
+        </div>
+
+        <div class="pricing-card">
+            <h3>Eraser</h3>
+            <p><strong>Monthly:</strong> M70 | <strong>Annual:</strong> M700</p>
+            <button>Subscribe</button>
+        </div>
+
+        <div class="pricing-card">
+            <h3>BleachBit</h3>
+            <p><strong>Monthly:</strong> M50 | <strong>Annual:</strong> M500</p>
+            <button>Subscribe</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>IWB provides top-notch software tools for data recovery, security, and management.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Page Top</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@IBWlesotho@gmail.com</p>
+            </div>
+            <div class="footer-section social-icons">
+                <h3>Follow Us</h3>
+                <a href="#"><img src="fb.jpg"></a>
+                <a href="#"><img src="twit.png"></a>
+                <a href="#"><img src="inst.png"></a>
+            </div>
+        </div>
+        <p>&copy; 2025 IWB Lesotho. All rights reserved.</p>
+    </footer>
+
+       <script>
+        // Show More / Show Less Functionality
+        document.querySelectorAll('.show-more').forEach(button => {
+            button.addEventListener('click', function() {
+                const paragraph = this.previousElementSibling.previousElementSibling;
+                if (paragraph.style.display === 'none' || paragraph.style.display === '') {
+                    paragraph.style.display = 'block';
+                    this.textContent = 'Read Less';
+                } else {
+                    paragraph.style.display = 'none';
+                    this.textContent = 'Read More';
+                }
+            });
+        });
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            document.getElementById("mobileMenu").classList.toggle("show");
+        }
+    </script>
+
+</body>
+</html>

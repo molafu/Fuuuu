@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - IWB</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        .nav-bar {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-bar a {
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .nav-bar a.active {
+            background-color: #008f77;
+            color: white;
+        }
+
+        /* Mobile Menu */
+        .menu-icon {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            background-color: grey;
+            width: 200px;
+            right: 20px;
+            top: 70px;
+            border-radius: 5px;
+        }
+
+        .mobile-menu a {
+            padding: 12px;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            margin-top: 100px;
+            padding: 20px;
+        }
+
+        .faq-container h1 {
+            color: #008f77;
+            margin-bottom: 20px;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 15px;
+            margin: 10px auto;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .faq-item h3 {
+            color: #008f77;
+            font-size: 18px;
+        }
+
+        .faq-item p {
+            display: none;
+            margin-top: 10px;
+            font-size: 14px;
+            color: black;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #008f77;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            height:400px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-bar {
+                display: none;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .mobile-menu.show {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <img src="logo.jpg" alt="IWB Logo" class="logo">
+        <nav class="nav-bar">
+            <a href="index.htm">Home</a>
+            <a href="pricing.html">pricing</a>
+            <a href="about.htm">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="faq.html" class="active">FAQ</a>
+        </nav>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.htm">Home</a>
+        <a href="pricing.html">pricing</a>
+        <a href="about.htm">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="faq.html" class="active">FAQ</a>
+    </div>
+
+    <!-- FAQ Section -->
+    <section class="faq-container">
+        <h1>Frequently Asked Questions</h1>
+
+        <div class="faq-item">
+            <h3>What does IWB do?</h3>
+            <p>IWB is a tech company based in Lesotho specializing in computer component recycling and offering software tools for data recovery and destruction.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Where is IWB located?</h3>
+            <p>We are located in Maseru, specifically in Khubetsoana, Foso.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What software tools do you offer?</h3>
+            <p>We offer tools like Disk Drill, Recuva, Eraser, and BleachBit for data recovery and secure data destruction.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How can I contact IWB?</h3>
+            <p>You can reach us via phone at +27 73 737 3611 or email at <a href="mailto:mokatimathota@gmail.com">mokatimathota@gmail.com</a>.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How can I get your software tools?</h3>
+            <p>You can find pricing details on our Services page, where you can also download or purchase the software.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 IWB Lesotho. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("mobileMenu").classList.toggle("show");
+        }
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const answer = this.querySelector('p');
+                if (answer.style.display === "none" || answer.style.display === "") {
+                    answer.style.display = "block";
+                } else {
+                    answer.style.display = "none";
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

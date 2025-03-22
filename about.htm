@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - IWB Tech</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            background-image: url('data1.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        /* Navigation */
+        .nav-bar {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-bar a {
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .nav-bar a.active {
+            background-color: #008f77;
+            color: white;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background-color: grey;
+            position: absolute;
+            top: 70px;
+            right: 20px;
+            width: 200px;
+            border-radius: 5px;
+        }
+
+        .mobile-menu a {
+            padding: 12px;
+            text-align: center;
+            display: block;
+            color: white;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 30px;
+            color: #0071bd;
+            cursor: pointer;
+        }
+
+        /* About Section */
+        .about-container {
+            max-width: 900px;
+            margin: 120px auto 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .about-container h1 {
+            color: #008f77;
+            margin-bottom: 15px;
+        }
+
+        .about-container p {
+            font-size: 16px;
+            color: black;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        /* Stakeholders */
+        .stakeholders-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px;
+        }
+
+        .stakeholder {
+            background-color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+        }
+
+        .stakeholder img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .stakeholder h3 {
+            color: black;
+        }
+
+        .stakeholder a {
+            display: inline-block;
+            color: #008f77;
+            text-decoration: none;
+            margin-top: 5px;
+        }
+
+        .stakeholder a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #008f77;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .footer-section {
+            max-width: 300px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .social-icons img {
+            width: 40px;
+            border-radius: 20px;
+            margin: 5px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-bar {
+                display: none;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .mobile-menu.show {
+                display: flex;
+            }
+
+            .about-container {
+                width: 90%;
+            }
+
+            .stakeholder {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <img src="logo.jpg" alt="Company Logo" class="logo">
+        <div class="nav-bar">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="about.html" class="active">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="faq.html">FAQ</a>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="faq.html">FAQ</a>
+    </div>
+
+    <!-- About Us Section -->
+    <div class="about-container">
+        <h1>About IWB Tech</h1>
+        <p>
+            IWB is a technology company based in Maseru, Lesotho that specializes in computer component recycling and software solutions.  
+            We are committed to reducing electronic waste by repurposing and recycling parts such as hard drives, motherboard components, and RAM modules.  
+            In addition to hardware recycling, we also offer cutting-edge software tools for data recovery and destruction, ensuring that businesses and individuals can manage their digital assets securely.
+        </p>
+    </div>
+
+    <!-- Stakeholders Section -->
+    <div class="about-container">
+        <h2>Meet Our Stakeholders</h2>
+        <div class="stakeholders-container">
+            <div class="stakeholder">
+                <img src="kenneth.jpg" alt="Kenneth">
+                <h3>Kenneth</h3>
+                <a href="https://kennethwebsite.com" target="_blank">Visit Website</a>
+            </div>
+            <div class="stakeholder">
+                <img src="shadrak.jpg" alt="Shadrak">
+                <h3>Shadrak</h3>
+                <a href="https://shadrakwebsite.com" target="_blank">Visit Website</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>IWB provides top-notch software tools for data recovery, security, and management.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Page Top</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@IBWlesotho@gmail.com</p>
+            </div>
+            <div class="footer-section social-icons">
+                <h3>Follow Us</h3>
+                <a href="#"><img src="fb.jpg"></a>
+                <a href="#"><img src="twit.png"></a>
+                <a href="#"><img src="inst.png"></a>
+            </div>
+        </div>
+        <p>&copy; 2025 IWB Lesotho. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("mobileMenu").classList.toggle("show");
+        }
+    </script>
+
+</body>
+</html>
